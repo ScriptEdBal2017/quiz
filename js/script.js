@@ -2,7 +2,7 @@
 
 $(document).ready(function() {
     $("button").click(function() {
-        var name = $("#name").val();
+        var personality = $("#name").val();
         var techPlacement = "TBD";
         var imgSrc = "https://media.giphy.com/media/22zgHX8aop488/giphy.gif";
         var q1Result = $("#question1").val();
