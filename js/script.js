@@ -4,16 +4,16 @@ var score = 0;
 
 $(document).ready(function() {
     $("button").click(function() {
-        var techPlacement = "TBD";
-        var imgSrc = "https://media.giphy.com/media/22zgHX8aop488/giphy.gif";
         var q1Result = $("#question1").val();
         var q2Result = $("#question2").val();
         var q3Result = $("#question3").val();
         var q4Result = $("#question4").val();
-        score= personality(q1Result)+teamwork(q2Result)+power(q3Result)+playstyle(q4Result);
-function personality(q1Result){
+        
     console.log(score);
-    if (q1Result==="aggresive"){
+    
+    
+    function personality(q1Result){
+    if (q1Result==="aggressive"){
         score= score-2;
     } 
      else if (q1Result==="annoying"){
@@ -25,7 +25,11 @@ function personality(q1Result){
     else if (q1Result==="calm"){
          score= score+1;
     }
+    return score;
 }
+
+
+
 
 function teamwork(q2Result){
     if (q2Result==="well"){
@@ -37,16 +41,22 @@ function teamwork(q2Result){
     else if (q2Result==="what team?"){
          score= score-2;
     }
+    return score;
 }
+
+
 
 function power(q3Result){
     if (q3Result==="damage"){
-         score= score-1;
+        return score= score-1;
     } 
      else if (q3Result==="heal"){
-         score= score+1;
+       return  score= score+1;
     }
+    return score;
 }
+
+
 
 function playstyle(q4Result){
     if (q4Result==="team"){
@@ -55,8 +65,16 @@ function playstyle(q4Result){
      else if (q4Result==="nightmare"){
          score= score-2;
     }
-console.log(score);
+    return score;
+
 } 
+console.log(score);
+personality(q1Result);
+teamwork(q2Result);
+power(q3Result);
+playstyle(q4Result);
+
+
 console.log(score);
 
     if(score>=-9&&score<=-6){
@@ -74,7 +92,7 @@ console.log(score);
     else if(score>=3&&score<=6){
         $("#champ").html("BRAUM IS YOUR CHAMPION");
     }
-    
+    score=0;
     })});
     
     
